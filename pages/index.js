@@ -34,6 +34,7 @@ const videoConstraints = {
       <>
        <h2>Click the below button to capture the Image</h2>
         <Webcam
+        style={{maxWidth: '400px',maxHeight:'600px'}}
           audio={false}
         height={height -'50px'}
           ref={webcamRef}
