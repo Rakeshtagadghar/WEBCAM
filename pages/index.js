@@ -9,6 +9,17 @@ const videoConstraints = {
   };
    
   const WebcamCapture = () => {
+    const [height, setHeight] = useState(null)
+    const [width, setWidth] = useState(null)
+    if (process.browser) {
+    useEffect(() => setHeight(document.children[0].clientHeight), [
+    document.children[0].clientHeight
+    ])
+    useEffect(() => setWidth(document.children[0].clientWidth), [
+    document.children[0].clientWidth
+    ])
+    }
+
     const webcamRef = React.useRef(null);
     const [image,setImage] = useState([]);
     const capture = React.useCallback(
@@ -23,10 +34,10 @@ const videoConstraints = {
       <>
         <Webcam
           audio={false}
-        //   height={720}
+        height={height - '40px'}
           ref={webcamRef}
           screenshotFormat="image/webp"
-        //   width={1280}
+        width='90%'
           videoConstraints={videoConstraints}
         />
         <button onClick={capture}>Capture photo</button>
