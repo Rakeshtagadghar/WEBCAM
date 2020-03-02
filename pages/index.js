@@ -2,8 +2,8 @@ import { useState } from "react";
 import Webcam from 'react-webcam';
 
 const videoConstraints = {
-    width: 1280,
-    height: 720,
+    width: 1024,
+    height: 640,
     facingMode: { exact: "environment" },
     screenshotQuality: 1
   };
