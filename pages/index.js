@@ -32,12 +32,13 @@ const videoConstraints = {
    
     return (
       <>
+       <h2>Click the below button to capture the Image</h2>
         <Webcam
           audio={false}
-        height={height}
+        height={height -'50px'}
           ref={webcamRef}
           screenshotFormat="image/webp"
-        width={width}
+        width={width -'30px'}
           videoConstraints={videoConstraints}
         />
         <button onClick={capture}>Capture photo</button>
